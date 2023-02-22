@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/188/188918.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body style="background:url(../img/bg.jpg); background-repeat:no-repeat; background-size:cover; " class="bg-poke">
+<nav class="navbar">
+    <ul style="position:absolute; text-align:right; right:50px; color:black; letter-spacing:2px; ">
+        {{#if securityAuth}}    
+            <li><a class= "esc" href="/logout">Sair</a></li>
+        {{else}}
+          <li>Faça o login</li>
+        {{/if}}
+    </ul>
+    <div class="logo">
+        <img width="250px" class="" src="../img/logo.png">
+    </div>
+
+    <div>
+        <ul class="navBarMenu">
+            <li class="itemMenu"><a href="/">VER POKEMONS</a></li>
+            <li class="itemMenu"><a href="/addpokemon">ADICIONAR POKEMON</a></li>
+            <li class="itemMenu"><a href="">EDITAR POKEMON</a></li>
+        </ul>
+    </div>
+</nav>
+    
+    {{{body}}}
+</body>
+</html>

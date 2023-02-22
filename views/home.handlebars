@@ -1,0 +1,40 @@
+<main>
+    <h1 class="pokemonQnt">VOCÊ TEM: {{size}} POKEMONS</h1>
+    <section class="section-cards">
+        {{#each poke}}
+        <div class="card">
+            <div class="card-title">
+                <p> N° ID {{this.idPokemon}} | {{this.nome}}</p>
+            </div>
+            <div class="card-img-container">
+                <img class="card-img" src={{this.img}} alt="">
+            </div>
+            <div class="card-descriptions">
+                <div class="card-status">
+                    <ul class="card-list-status">
+                        <li class="list-group-item list-group-item-danger" >SPEED<p id="statusOne">{{this.spd}}</p></li>
+                        <li class="list-group-item list-group-item-danger" >ATAQUE<p id="statusTwo">{{this.atk}}</p></li> 
+                        <li class="list-group-item list-group-item-danger" >DEFESA<p id="statusThree">{{this.def}}</p></li> 
+                    </ul>
+                </div>
+                <div class="card-type">
+                <button id="type1" class="tipo {{this.type1}}">{{this.type1}}</button>
+                {{#if this.type2}}
+                    <button id="type2" class="tipo {{this.type2}}">{{this.type2}}</button>
+                {{else}}
+                    <button id="type2" class="tipo" hidden></button>
+                {{/if}}
+                </div>
+
+                <div>
+                <div style=" padding:5px; text-align:center; color:BLUE; letter-spacing:2px;" class="card-descriptions">
+                    <a href="/verpokemon/{{this.id}}">EDITAR</a>
+                </div>
+                </div>
+
+            </div>
+        </div>
+        {{/each}}
+    </section>
+</main>
+

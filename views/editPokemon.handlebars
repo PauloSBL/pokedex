@@ -1,0 +1,27 @@
+<nav class="navbar">
+    <div class="logo">
+        <img class="" src="../public/img/logo.png">
+    </div>
+
+    <div>
+        <ul class="navBarMenu">
+            <li class="itemMenu"><a href="/">VER POKEMONS</a></li>
+            <li class="itemMenu"><a href="/addpokemon">ADICIONAR POKEMON</a></li>
+            <li class="itemMenu"><a href="">EDITAR POKEMON</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="loginScreen">
+    <div class="cadastroCard">
+        <form action="/editarpokemon" method="POST">
+            <input type="hidden" name="id" value={{poke.idPokemon}}>
+            <label for="">Nome Pokemon: {{poke.nome}}</label>
+            <input name="nome" type="text" placeholder="Novo nome do pokemon">
+                <button>
+                    <input style="color:red; font-size:1.2rem; !important font-family:Roboto;" type="submit" value="ATUALIZAR">
+                </button>
+            </div>
+        </form>
+    </div>
+</section>

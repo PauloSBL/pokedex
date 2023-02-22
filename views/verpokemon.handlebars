@@ -1,0 +1,32 @@
+<section style="margin-top:50px; display:flex; align-itens:center; justify-content:center;">
+        <div>
+            {{#if poke}}
+            <div class="card">
+                <div class="card-title">
+                    <p style="padding:5px;"> N° ID {{poke.idPokemon}} | {{poke.nome}}</p>
+                    <form action="/updatepokemon" method="post">
+                        <input type="hidden" name="id" value="{{poke.id}}">
+                        <input type="text" name="nome" value="{{poke.nome}}">
+                        <input type="submit" value="Salvar"/> 
+                    </form>
+                </div>
+                <div style="padding:10px" class="card-img-container">
+                    <img class="card-img" src={{poke.img}} alt="">
+                </div>
+                <div style=" padding:5px; text-align:center; color:yellow; letter-spacing:2px;" class="card-descriptions">
+                    <a href="/removerpokemon/{{poke.id}}">EXCLUIR</a>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+</section>
+
+
+<style>
+    .addPokemon{
+        margin-top: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

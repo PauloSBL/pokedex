@@ -1,0 +1,105 @@
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+li{
+    list-style: none;
+}
+
+.logo{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.navBarMenu{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.itemMenu{
+    background-color: #ff4b62 !important;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 25px;
+    color:#fff;
+}
+
+.pokemonQnt{
+    text-align:center; 
+    margin-top:50px; 
+    color:white; 
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+
+
+ 
+
+/* CARD POKEMON  */
+
+.section-cards{
+    display:flex;
+    justify-content: center;
+    width: 960px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.card{
+    background: #ff4b62;
+    width: 300px;
+    border-radius: 20px;
+    color: #fff !important;
+    margin: 10px;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.card-img{
+    width:100% ;
+}
+
+.card-status{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.card-status ul{
+    text-align: center;
+}
+
+.card-status ul li{
+    display:inline-block;
+    padding: 10px;
+}
+
+.card-type{
+    width: 80%;
+    margin:0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.tipo{
+    padding: 10px;
+    background:green;
+    color:white;
+    border-radius: 15px;
+}
+
+.card-vantagens{
+    padding: 10px;
+}
+
+
+
+.card-vantagens p{
+    font-size: 16px;
+}

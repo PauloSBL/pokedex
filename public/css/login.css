@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+.loginScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+
+
+.loginCard{
+    width: 300px;
+    padding: 30px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.itemLogin{
+    margin-top: 10px;
+    font-size:1.2rem;
+    font-weight:500;
+    font-family: Roboto;
+    display: block;
+}
+
+.inputLogin{
+    border:none;
+    height: 25px;
+    border-radius:25px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+button{
+    text-align: center;
+    background:none;
+    border:none;
+}
+
+.loginCard button input{
+    margin-top: 40px;
+    border: none;
+    color:white;
+    background:#ff4b62;;
+    margin: none;
+    padding: 10px;
+    width: 100px;
+    border-radius:25px;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size:1.2rem;
+}
+
+.cadastroCard{
+    width: 300px;
+    padding: 30px;
+    background: rgba(255, 0, 0, 0.651);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    text-align: center;
+
+}
+
+.cadastroCard label{
+    font-family: Roboto;
+    color:white;
+}
+
+.cadastroCard input{
+    border:none;
+    background:white;
+    border-radius:25px;
+    height: 25px;
+}
+
+.esconder{
+    display:none;
+}
+
+.esmaecer {
+    animation: fadeOut 1s linear;
+    animation-fill-mode: forwards;
+
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
