@@ -77,11 +77,22 @@ button{
     color:white;
 }
 
-.cadastroCard input{
+
+.submitCadastro{
+    border:none;
+    border-radius: 25px;
+    color:red; 
+    font-size:1.2rem; 
+    padding:10px;
+    letter-spacing: 1px;
+}
+
+.inputSingup{
     border:none;
     background:white;
     border-radius:25px;
     height: 25px;
+    padding: 10px   ;
 }
 
 .esconder{

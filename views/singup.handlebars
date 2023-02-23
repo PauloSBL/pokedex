@@ -1,15 +1,16 @@
 <section class="loginScreen">
+    <h1 style="color:white; letter-spacing:2px; font-size:34px;">CADASTRO</h1>
     <div class="cadastroCard">
         <form action="/singup" method="POST">
             <label for="">Usuario:</label>
-            <input name="usuario" type="text">
+            <input class="inputSingup" name="usuario" type="text">
             <label for="">Senha:</label>
-            <input name="senha" type="text">
+            <input class="inputSingup" name="senha" type="password">
             <label for="">Senha:</label>
-            <input name="senhaConfirm" type="text">
-            <div style="text-align: center;">
+            <input class="inputSingup" name="senhaConfirm" type="password">
+            <div style="text-align: center; margin-top:20px;">
                 <button>
-                    <input style="color:red; font-size:1.2rem; !important font-family:Roboto;" type="submit" value="CADASTRAR">
+                    <input class="submitCadastro" type="submit" value="CADASTRAR">
                 </button>
             </div>
         </form>
