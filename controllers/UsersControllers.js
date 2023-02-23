@@ -127,38 +127,47 @@ module.exports = class UserController{
     
 
     static async addPokemonSave(req, res){
-        try {
-            const idPoke = req.body.id
-
-            // Consulta a PokeAPI para obter os dados do Pokémon
-            request(`https://pokeapi.co/api/v2/pokemon/${idPoke}`, async (error, response, body) => {
-              if (error) {
-                console.error(error);
-
-              } else {
-                const pokemonData = JSON.parse(body);
-                const namePoke = pokemonData.name
-
-                // Cria um novo registro de Pokémon no banco de dados
-                //todas as colunas estão sendo preenchidas com as informações que retiramos da pokeAPI
-                const pokemon = await Pokemon.create({
-                  idPokemon: pokemonData.id,
-                  nome: pokemonData.name,
-                  img: `https://img.pokemondb.net/artwork/${namePoke}.jpg`, // as imagens eu pego desse site
-                  spd: pokemonData.stats[0].base_stat,
-                  atk: pokemonData.stats[1].base_stat,
-                  def: pokemonData.stats[2].base_stat,
-                  type1: pokemonData.types[0].type.name,
-                  type2: pokemonData.types[1] ? pokemonData.types[1].type.name : null,
-                  userId:req.session.userid, // essa tabela diz que o dono desse pokemon é omesmo que esta com a session ativa
-                  vantagens: ''
-                });
-              }
-            });
-          }catch (error) {
-            console.error(error);
-          }
-          res.render('addpokemon');
+      try {
+          const idPoke = req.body.id
+    
+          // Consulta a PokeAPI para obter os dados do Pokémon
+    
+          const options = {
+            url: `https://pokeapi.co/api/v2/pokemon/${idPoke}`,
+            port: 443,
+            path: '/',
+            method: 'GET',
+            rejectUnauthorized: false
+          };
+          
+          request(options, async (error, response, body) => {
+            if (error) {
+              console.error(error);
+            } else {
+              const pokemonData = JSON.parse(body);
+              const namePoke = pokemonData.name
+    
+              // Cria um novo registro de Pokémon no banco de dados
+              //todas as colunas estão sendo preenchidas com as informações que retiramos da pokeAPI
+              const pokemon = await Pokemon.create({
+                idPokemon: pokemonData.id,
+                nome: pokemonData.name,
+                img: `https://img.pokemondb.net/artwork/${namePoke}.jpg`, // as imagens eu pego desse site
+                spd: pokemonData.stats[0].base_stat,
+                atk: pokemonData.stats[1].base_stat,
+                def: pokemonData.stats[2].base_stat,
+                type1: pokemonData.types[0].type.name,
+                type2: pokemonData.types[1] ? pokemonData.types[1].type.name : null,
+                userId:req.session.userid, // essa tabela diz que o dono desse pokemon é omesmo que esta com a session ativa
+                vantagens: ''
+              });
+            }
+          });
+        } catch (error) {
+          console.error(error);
+          res.render('home')
+        }
+        res.render('addpokemon');
     }
 
 

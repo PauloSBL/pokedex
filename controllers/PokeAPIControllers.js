@@ -13,8 +13,17 @@ module.exports = class PokeAPI{
             //defino que a url é a string mais a const search(contem o nome ou o id)
             const url = `https://pokeapi.co/api/v2/pokemon/${search}`;
         
+
+            const options = {
+                url: url,
+                port: 443,
+                path: '/',
+                method: 'GET',
+                rejectUnauthorized: false /// <<<== here
+              };
+
             // aqui faço uma requisição na url
-            request.get(url, (error, response, body) => {
+            request.get(options, (error, response, body) => {
             if (error) {
                 console.error(error)
                 res.render('error')
@@ -31,7 +40,7 @@ module.exports = class PokeAPI{
         }catch(err){
             console.log(err)
             const data = null
-            res.render('addpokemon')
+            res.render('home')
         }
     }
 }
