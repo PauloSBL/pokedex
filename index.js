@@ -10,14 +10,13 @@ const Pokemon = require('./models/Pokemon')
 const User = require('./models/User')
 const pokemonRouters = require('./routers/index')
 const app = express();
+const flash = require('connect-flash');
 
 app.use(
     express.urlencoded({
       extended: true,
     }),
   )
-
-
 
   app.use(
     session({
@@ -51,10 +50,9 @@ app.use(express.static('public'))
 app.use(express.static(path.join(__dirname, 'public/css/')));
 app.use(express.static(path.join(__dirname, 'public/img/')));
 app.set('views', 'views');
-
-
-
+app.use(flash());
 app.use('/', pokemonRouters)
 
-conn.sync()
+
+conn.sync({force:true})
 app.listen(3000);

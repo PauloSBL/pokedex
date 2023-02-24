@@ -34,6 +34,43 @@ li{
     color:white; 
     text-shadow: 2px 2px 4px #000000;
 }
+/*login*/
+
+.TituloLogin{
+    background-color: #ff4b62 !important;
+    padding: 8px;
+    border-radius: 25px;
+    color:#fff;
+    align-items: center;
+    font-size: 65px;
+}
+.icon-titulo{
+    width: 10%;
+    height: 10%;
+}
+.Rodape{
+    background-color: #ff4b62 !important; 
+    text-align: center;
+    width: 100%;
+    height: 10%;
+    padding: 20px;
+    position:relative;
+}
+.RodapeText{
+    font-size: 18px !important;
+    height: 10%;
+}
+.link-animation:hover{
+    padding-left: 30px;
+    border-left: 4px solid #fff;
+    color: #fff;
+    transition: .4s;
+}
+
+.icon-rodape{
+    width: 2em;
+    height: 2em;
+}
 
 
 
@@ -60,6 +97,7 @@ li{
 
 .card-title{
     text-align: center;
+    
 }
 
 .card-img{

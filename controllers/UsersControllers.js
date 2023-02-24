@@ -5,6 +5,7 @@ const Sequelize = require('sequelize')
 const bcrypt = require('bcryptjs')
 
 
+
 module.exports = class UserController{
     static login(req, res){
         res.render('login')
@@ -17,7 +18,7 @@ module.exports = class UserController{
     Pokemon.findOne({ where: { id: id }, raw: true })
       .then((poke) => {
         res.render('verpokemon', { poke, securityAuth })
-      })
+      }) 
       .catch((err) => console.log())
     }
 
@@ -27,13 +28,13 @@ module.exports = class UserController{
     static async loginEnter(req, res){
         const { usuario , senha } = req.body
 
-        // find user
+        // ver se existe um user
         const user = await User.findOne({ where: { usuario:usuario } })
     
         if (!user) {
           res.render('login')
-    
           return
+          
         }
         
 
@@ -41,16 +42,19 @@ module.exports = class UserController{
         const passwordMatch = bcrypt.compareSync(senha, user.senha)
         if (!passwordMatch) {
           res.render('login')
+  
     
           return
         }
     
         // define que o userid vai ser igual ao id do usuario no banco de dados 
         req.session.userid = user.id
+      
         
 
         req.session.save(() => {
           res.redirect('/')
+         
         }) 
     }
 
@@ -86,7 +90,7 @@ module.exports = class UserController{
                     })
                   })
             }else{
-                console.log('senha errada')
+              
             }
 
         }catch(err){
@@ -161,6 +165,7 @@ module.exports = class UserController{
                 userId:req.session.userid, // essa tabela diz que o dono desse pokemon é omesmo que esta com a session ativa
                 vantagens: ''
               });
+  
             }
           });
         } catch (error) {

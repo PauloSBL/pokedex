@@ -18,23 +18,39 @@
     <ul style="position:absolute; text-align:right; right:50px; color:black; letter-spacing:2px; ">
         {{#if securityAuth}}    
             <li><a class= "esc" href="/logout">Sair</a></li>
+            
         {{else}}
-          <li>Faça o login</li>
+          <li> <a href="login">Faça o login</a></li>
         {{/if}}
     </ul>
     <div class="logo">
-        <img width="250px" class="" src="../img/logo.png">
+        <img width="290px" class="" src="../img/logo.png">
     </div>
-
     <div>
         <ul class="navBarMenu">
+            {{#if session.userid}}
             <li class="itemMenu"><a href="/">VER POKEMONS</a></li>
             <li class="itemMenu"><a href="/addpokemon">ADICIONAR POKEMON</a></li>
             <li class="itemMenu"><a href="">EDITAR POKEMON</a></li>
+            {{else}} 
+            <h1 class="TituloLogin">  <img class="icon-titulo" src="https://cdn-icons-png.flaticon.com/128/528/528101.png" alt=""> ENTRE E VEJA SEUS POKEMONS!</h1>
+            {{/if}}
         </ul>
     </div>
 </nav>
     
     {{{body}}}
+  
+  <footer>
+    <div class="Rodape">
+        {{#if session.userid}}
+        <h1 class="RodapeText">  <img class="icon-rodape" src="https://cdn-icons-png.flaticon.com/128/287/287226.png" alt=""> CREATE BY <a href="https://github.com/Lyncolnlopes"  class="link-animation">  LYNCOLN </a>AND <a href="https://github.com/PauloSBL" class="link-animation" >  PAULO!</a></h1>
+        {{else}} 
+        <h1>  <img class="icon-rodape" src="https://cdn-icons-png.flaticon.com/128/1408/1408992.png" alt=""> SEJA BEM-VINDO</h1>
+        {{/if}}
+    </div>
+
+  </footer>
 </body>
+
 </html>
